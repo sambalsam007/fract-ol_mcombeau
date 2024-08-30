@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:19:51 by mcombeau          #+#    #+#             */
-/*   Updated: 2024/08/30 12:03:05 by samd-hoo         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:22:29 by samd-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ int	main(int ac, char **av)
 		free this, close this, etc, ...
 		-> to ensure a CLEAN exit
 	*/
+	fin();
 	clean_init(&f);
 	handle_args(&f, ac, av);
 	init(&f);
