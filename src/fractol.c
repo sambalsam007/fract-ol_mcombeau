@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:19:51 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/04/24 14:56:15 by mcombeau         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:03:05 by samd-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,24 @@ static void	handle_args(t_fractol *f, int ac, char **av)
 *	opens a new window and registers hooks to detect user interactions.
 *	Loops infinitely until the user quits the process.
 */
+void	fin(void)
+{
+		printf("\n--end--\n");
+		exit (0);
+}
+
 int	main(int ac, char **av)
 {
 	t_fractol	f;
 
 	if (ac < 2)
 		help_msg(&f);
+	/*
+	prints message
+	depending on the state of typedef struct 'f'
+		free this, close this, etc, ...
+		-> to ensure a CLEAN exit
+	*/
 	clean_init(&f);
 	handle_args(&f, ac, av);
 	init(&f);
