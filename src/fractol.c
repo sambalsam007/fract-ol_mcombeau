@@ -105,7 +105,7 @@ static void	handle_args(t_fractol *f, int ac, char **av)
 *	opens a new window and registers hooks to detect user interactions.
 *	Loops infinitely until the user quits the process.
 */
-void	breakpoint(void)
+void	s_breakpoint(void)
 {
 		printf("\n--break--\n");
 		getchar();
@@ -125,13 +125,19 @@ int	main(int ac, char **av)
 		-> to ensure a CLEAN exit
 	*/
 	clean_init(&f);
-	/*
-	 * initiliazes t_fractol f
+	printf("clean_init results:\n");
+	printf("min_r\t%f\n",f.kr);
+	/* Initiliazes t_fractol f
 	 * with '0' values
-	 * or NULL values
+	 * or NULL values.
 	 */
-	breakpoint();
 	handle_args(&f, ac, av);
+	printf("\nhandle_args results:\n");
+	printf("min_r\t%f\n",f.kr);
+	/* check if user wants mandelbrot or julia, burning ship, ...
+	 * get julia starting values
+	 */
+	s_breakpoint();
 	init(&f); 
 	/*
 	1. opens window
