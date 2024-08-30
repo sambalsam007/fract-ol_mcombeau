@@ -125,6 +125,11 @@ int	main(int ac, char **av)
 		-> to ensure a CLEAN exit
 	*/
 	clean_init(&f);
+	/*
+	 * initiliazes t_fractol f
+	 * with '0' values
+	 * or NULL values
+	 */
 	breakpoint();
 	handle_args(&f, ac, av);
 	init(&f); 
