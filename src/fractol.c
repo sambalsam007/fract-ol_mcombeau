@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:19:51 by mcombeau          #+#    #+#             */
-/*   Updated: 2024/09/02 11:38:06 by samd-hoo         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:14:27 by samd-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,8 +154,20 @@ int	main(int ac, char **av)
 	1. print controls
 	*/
 	mlx_hook(f.win, EVENT_CLOSE_BTN, 0, end_fractol, &f);
+	/*
+		? make escape key, cross functional?
+	*/
 	mlx_key_hook(f.win, key_event, &f);
+	/*
+		? make keys functional
+	*/
 	mlx_mouse_hook(f.win, mouse_event, &f);
+	/*
+		? make mouse functional
+	*/
 	mlx_loop(f.mlx);
+	/*
+		? keep window open & functional
+	*/
 	// s_breakpoint();
 }
