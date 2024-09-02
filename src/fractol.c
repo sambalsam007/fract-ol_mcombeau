@@ -6,7 +6,7 @@
 /*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 16:19:51 by mcombeau          #+#    #+#             */
-/*   Updated: 2024/08/30 13:04:18 by samd-hoo         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:38:06 by samd-hoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,14 +137,17 @@ int	main(int ac, char **av)
 	/* check if user wants mandelbrot or julia, burning ship, ...
 	 * get julia starting values
 	 */
-	s_breakpoint();
 	init(&f); 
 	/*
 	1. opens window
+	2. set some (?) default values in the t_fractol structure
 	*/
 	render(&f); 
 	/*
-	1. mandelbrot img rendered
+	1. check each pixel
+		turn pixel into complex number
+		check if number = part of fractal set
+	2. construct image
 	*/
 	print_controls(); 
 	/*
@@ -154,4 +157,5 @@ int	main(int ac, char **av)
 	mlx_key_hook(f.win, key_event, &f);
 	mlx_mouse_hook(f.win, mouse_event, &f);
 	mlx_loop(f.mlx);
+	// s_breakpoint();
 }
